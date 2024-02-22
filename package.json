@@ -33,6 +33,7 @@
     "@ckeditor/ckeditor5-table": "41.0.0",
     "@ckeditor/ckeditor5-undo": "41.0.0",
     "@ckeditor/ckeditor5-word-count": "41.0.0",
+    "antd": "^5.14.1",
     "umi": "^4.1.1"
   },
   "devDependencies": {

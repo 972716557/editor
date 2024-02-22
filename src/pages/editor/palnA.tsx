@@ -5,79 +5,11 @@
 
 import React, { useState, useEffect, StrictMode } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
-import {
-  EditOutlined,
-  UsbOutlined,
-  IeOutlined,
-  DownOutlined,
-} from "@ant-design/icons";
+import { EditOutlined } from "@ant-design/icons";
 import HeadlessEditor from "./editor";
-import {
-  Button,
-  Divider,
-  Dropdown,
-  Menu,
-  MenuProps,
-  Select,
-  Space,
-} from "antd";
-import "./index.less";
-const MenuItem = Menu.Item;
-const items: MenuProps["items"] = [
-  {
-    key: 14,
-    label: 14,
-  },
-  {
-    key: 16,
-    label: 16,
-  },
-  {
-    key: 18,
-    label: 18,
-  },
-];
-
 function EditorToolbar({ editor }) {
   return (
     <div className="editor-toolbar">
-      <EditorToolbarButton
-        label={<UsbOutlined />}
-        editor={editor}
-        commandName="redo"
-        commandValue="redo"
-      />
-      <EditorToolbarButton
-        label={<UsbOutlined />}
-        editor={editor}
-        commandName="undo"
-        commandValue="undo"
-      />
-      <EditorToolbarButton
-        label={<IeOutlined />}
-        editor={editor}
-        commandName="removeFormat"
-        commandValue="removeFormat"
-      />
-      <Divider type="vertical" />
-      <Dropdown
-        menu={{
-          items,
-          onClick({ key }) {
-            editor.execute("fontSize", { value: key });
-            editor.editing.view.focus();
-          },
-        }}
-      >
-        <a onClick={(e) => e.preventDefault()}>
-          <Space>
-            Hover me
-            <DownOutlined />
-          </Space>
-        </a>
-      </Dropdown>
-
-      {/* <Select /> */}
       <EditorToolbarButton
         label={<EditOutlined />}
         editor={editor}
@@ -191,9 +123,9 @@ function EditorToolbarButton({
   const classNames = ["custom-editor-button"];
 
   if (isEnabled) {
-    classNames.push(isOn ? "editor-toolbar-item-disabled" : "");
+    classNames.push(isOn ? "custom-editor-button--fill" : "");
   } else {
-    classNames.push("editor-toolbar-item");
+    classNames.push("custom-editor-button--disabled");
   }
 
   return (

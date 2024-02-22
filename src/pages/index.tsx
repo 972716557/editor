@@ -1,14 +1,9 @@
-import Editor from "./editor"
-
+import Editor from "./editor";
 
 export default function HomePage() {
   return (
     <div>
-      <Editor/>
-      <h2>Yay! Welcome to umi!</h2>
-      <p>
-        To get started, edit <code>pages/index.tsx</code> and save to reload.
-      </p>
+      <Editor />
     </div>
   );
 }

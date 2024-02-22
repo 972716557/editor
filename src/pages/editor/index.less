@@ -1,0 +1,70 @@
+@line-1: #f2f3f5;
+@line-2: #e5e6eb;
+@line-3: #c9cdd4;
+@line-4: #86909c;
+@fill-1: #fff;
+@fill-2: #f7f8fa;
+@fill-3: #f2f3f5;
+@fill-4: #e5e6eb;
+@fill-5: #c9cdd4;
+@fill-6: #4e5969;
+@text-1: #fff;
+@text-2: #c9cdd4;
+@text-3: #86909c;
+@text-4: #4e5969;
+@text-5: #1d2129;
+@primary-6: #306eff;
+@primary-5: #5990ff;
+@primary-7: #1e50d9;
+@primary-color: #306eff;
+@primary-4: #82b0ff;
+
+.editor {
+  &-toolbar-bottom {
+    border-top: 1px solid @line-2;
+    border-bottom: 0;
+  }
+
+  &-toolbar-item {
+    display: inline-block;
+    min-width: 36px;
+    height: 36px;
+    margin: 4px 8px 4px 0;
+    font-size: 15px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+
+    > span {
+      display: inline-block;
+      width: 100%;
+
+      > span {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-active {
+      color: @primary-6;
+    }
+
+    &-disabled {
+      background: @fill-1;
+      cursor: no-drop;
+      opacity: 0.3;
+
+      > span {
+        > span {
+          pointer-events: none;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
